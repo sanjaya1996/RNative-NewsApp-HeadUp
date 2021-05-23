@@ -7,7 +7,7 @@
  */
 
 import React from 'react';
-import {StyleSheet, View, useColorScheme, StatusBar} from 'react-native';
+import {useColorScheme, StatusBar} from 'react-native';
 import HomeScreen from './src/screens/HomeScreen';
 
 const App = () => {
@@ -16,17 +16,9 @@ const App = () => {
   return (
     <>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <View style={styles.screen}>
-        <HomeScreen />
-      </View>
+      <HomeScreen />
     </>
   );
 };
-
-const styles = StyleSheet.create({
-  screen: {
-    flex: 1,
-  },
-});
 
 export default App;

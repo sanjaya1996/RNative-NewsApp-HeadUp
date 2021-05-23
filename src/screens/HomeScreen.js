@@ -1,23 +1,25 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
+import {ScrollView, StyleSheet, View} from 'react-native';
+import BreakingNews from '../components/BreakingNews';
 import FeaturedNews from '../components/FeaturedNews';
-import SmallCard from '../components/SmallCard';
+import Screen from '../components/Screen';
+import TechNews from '../components/TechNews';
+
+import NEWS_LIST from '../data/dummy-data';
 
 const HomeScreen = () => {
+  const breakingNews = NEWS_LIST.filter(
+    item => item.category === 'breaking-news',
+  );
+
+  const techNews = NEWS_LIST.filter(item => item.category === 'tech');
   return (
-    <View style={styles.screen}>
-      <FeaturedNews />
-      <SmallCard />
-    </View>
+    <Screen>
+      <FeaturedNews item={NEWS_LIST[0]} />
+      <BreakingNews data={breakingNews} />
+      <TechNews data={techNews} />
+    </Screen>
   );
 };
-
-const styles = StyleSheet.create({
-  screen: {
-    flex: 1,
-    paddingHorizontal: 15,
-    backgroundColor: '#f7f3f3',
-  },
-});
 
 export default HomeScreen;

@@ -4,8 +4,10 @@ import BlockCard from './BlockCard';
 
 const {width} = Dimensions.get('window');
 
-const SmallCard = () => {
-  return <BlockCard style={styles.container} imageStyle={styles.image} />;
+const SmallCard = ({item}) => {
+  return (
+    <BlockCard style={styles.container} imageStyle={styles.image} item={item} />
+  );
 };
 
 const styles = StyleSheet.create({
