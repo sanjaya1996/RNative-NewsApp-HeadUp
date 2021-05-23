@@ -9,39 +9,14 @@ import Screen from '../components/Screen';
 import TechNews from '../components/TechNews';
 import * as newsActions from '../store/actions/newsActions';
 
-<<<<<<< HEAD
-import NEWS_LIST from '../data/dummy-data';
-import {ScrollView, Text} from 'react-native';
-=======
 import {Text} from 'react-native';
 import LatestNews from '../components/LatestNews';
->>>>>>> af93a25a66ba82090d3baa16a07eddc6ae1940b6
 
 const HomeScreen = () => {
   const dispatch = useDispatch();
 
   const state = useSelector(store => store);
 
-<<<<<<< HEAD
-  const latestNewsState = state.latestNews;
-  const {
-    loading: loadingLatest,
-    error: errorLatest,
-    newsList: newsListLatest,
-  } = latestNewsState;
-
-  const breakingNewsState = state.breakingNews;
-  const {loading, error, newsList} = breakingNewsState;
-
-  const techNewsState = state.techNews;
-  const {
-    loading: loadingTech,
-    error: errorTech,
-    newsList: newsListTech,
-  } = techNewsState;
-
-  const healthNewsState = state.healthNews;
-=======
   const breakingNewsState = state.breakingNews;
   const {loading, error, newsList} = breakingNewsState;
 
@@ -56,13 +31,10 @@ const HomeScreen = () => {
   remainingLatestNews.shift();
 
   const healthNewsState = state.latestNews;
->>>>>>> af93a25a66ba82090d3baa16a07eddc6ae1940b6
   const {
     loading: loadingHealth,
     error: errorHealth,
     newsList: newsListHealth,
-<<<<<<< HEAD
-=======
   } = healthNewsState;
 
   const techNewsState = state.techNews;
@@ -70,44 +42,17 @@ const HomeScreen = () => {
     loading: loadingTech,
     error: errorTech,
     newsList: newsListTech,
->>>>>>> af93a25a66ba82090d3baa16a07eddc6ae1940b6
   } = techNewsState;
 
   const entertainmentNewsState = state.entertainmentNews;
   const {
-<<<<<<< HEAD
-    loading: loadingEntertainment,
-    error: errorEntertainment,
-    newsList: newsListEntertainment,
-  } = techNewsState;
-=======
     loading: loadingEntertain,
     error: errorEntertain,
     newsList: newsListEntertain,
   } = entertainmentNewsState;
->>>>>>> af93a25a66ba82090d3baa16a07eddc6ae1940b6
 
   useEffect(() => {
-    dispatch(newsActions.getLatestNews());
     dispatch(newsActions.getBreakingNews());
-<<<<<<< HEAD
-    dispatch(newsActions.getTechNews());
-    dispatch(newsActions.getHealthNews());
-    dispatch(newsActions.getEntertainmentNews());
-  }, [dispatch]);
-
-  return (
-    <Screen>
-      <FeaturedNews
-        item={NEWS_LIST[0]}
-        loading={loadingLatest}
-        error={errorLatest}
-      />
-      <BreakingNews data={NEWS_LIST} loading={loadingLatest} />
-      <HealthNews data={NEWS_LIST} loading={loadingHealth} />
-      <TechNews data={NEWS_LIST} loading={loadingTech} />
-      <EntertainmentNews data={NEWS_LIST} loading={loadingEntertainment} />
-=======
     dispatch(newsActions.getLatestNews());
     dispatch(newsActions.getHealthNews());
     dispatch(newsActions.getTechNews());
@@ -162,7 +107,6 @@ const HomeScreen = () => {
       ) : (
         <LatestNews data={remainingLatestNews} />
       )}
->>>>>>> af93a25a66ba82090d3baa16a07eddc6ae1940b6
     </Screen>
   );
 };

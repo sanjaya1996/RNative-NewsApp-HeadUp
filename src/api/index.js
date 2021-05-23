@@ -12,11 +12,7 @@ export const fetchLatestNews = () =>
 
 export const fetchBreakingNews = () =>
   API.get(
-<<<<<<< HEAD
-    `/v2/top-headlines?sortBy=popularity&pageSize=10&apiKey=${NEWS_API_KEY}`,
-=======
     `/v2/top-headlines?sources=abc-news&sortBy=popularity&pageSize=10&apiKey=${NEWS_API_KEY}`,
->>>>>>> af93a25a66ba82090d3baa16a07eddc6ae1940b6
   );
 
 export const fetchTechNews = () =>
