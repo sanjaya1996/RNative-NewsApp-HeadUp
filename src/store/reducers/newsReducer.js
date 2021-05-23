@@ -1,3 +1,4 @@
+import News from '../../models/News';
 import {
   BREAKING_NEWS_FAIL,
   BREAKING_NEWS_LOADING,
@@ -5,12 +6,12 @@ import {
   ENTERTAINMENT_NEWS_FAIL,
   ENTERTAINMENT_NEWS_LOADING,
   ENTERTAINMENT_NEWS_SUCCESS,
-  GENERAL_NEWS_FAIL,
-  GENERAL_NEWS_LOADING,
-  GENERAL_NEWS_SUCCESS,
-  POLITICAL_NEWS_FAIL,
-  POLITICAL_NEWS_LOADING,
-  POLITICAL_NEWS_SUCCESS,
+  LATEST_NEWS_FAIL,
+  LATEST_NEWS_LOADING,
+  LATEST_NEWS_SUCCESS,
+  HEALTH_NEWS_FAIL,
+  HEALTH_NEWS_LOADING,
+  HEALTH_NEWS_SUCCESS,
   TECH_NEWS_FAIL,
   TECH_NEWS_LOADING,
   TECH_NEWS_SUCCESS,
@@ -26,7 +27,10 @@ export const breakingNewsReducer = (state = initialState, action) => {
     case BREAKING_NEWS_LOADING:
       return {...state, loading: true};
     case BREAKING_NEWS_SUCCESS:
-      return {loading: false, newsList: action.payload};
+      return {
+        loading: false,
+        newsList: createNewsList(action.payload.articles),
+      };
     case BREAKING_NEWS_FAIL:
       return {...state, loading: false, error: action.payload};
     default:
@@ -39,7 +43,10 @@ export const techNewsReducer = (state = initialState, action) => {
     case TECH_NEWS_LOADING:
       return {...state, loading: true};
     case TECH_NEWS_SUCCESS:
-      return {loading: false, newsList: action.payload};
+      return {
+        loading: false,
+        newsList: createNewsList(action.payload.articles),
+      };
     case TECH_NEWS_FAIL:
       return {...state, loading: false, error: action.payload};
     default:
@@ -47,13 +54,16 @@ export const techNewsReducer = (state = initialState, action) => {
   }
 };
 
-export const politicalNewsReducer = (state = initialState, action) => {
+export const healthNewsReducer = (state = initialState, action) => {
   switch (action.type) {
-    case POLITICAL_NEWS_LOADING:
+    case HEALTH_NEWS_LOADING:
       return {...state, loading: true};
-    case POLITICAL_NEWS_SUCCESS:
-      return {loading: false, newsList: action.payload};
-    case POLITICAL_NEWS_FAIL:
+    case HEALTH_NEWS_SUCCESS:
+      return {
+        loading: false,
+        newsList: createNewsList(action.payload.articles),
+      };
+    case HEALTH_NEWS_FAIL:
       return {...state, loading: false, error: action.payload};
     default:
       return state;
@@ -65,7 +75,10 @@ export const entertainmentNewsReducer = (state = initialState, action) => {
     case ENTERTAINMENT_NEWS_LOADING:
       return {...state, loading: true};
     case ENTERTAINMENT_NEWS_SUCCESS:
-      return {loading: false, newsList: action.payload};
+      return {
+        loading: false,
+        newsList: createNewsList(action.payload.articles),
+      };
     case ENTERTAINMENT_NEWS_FAIL:
       return {...state, loading: false, error: action.payload};
     default:
@@ -73,15 +86,38 @@ export const entertainmentNewsReducer = (state = initialState, action) => {
   }
 };
 
-export const generalNewsReducer = (state = initialState, action) => {
+export const latestNewsReducer = (state = initialState, action) => {
   switch (action.type) {
-    case GENERAL_NEWS_LOADING:
+    case LATEST_NEWS_LOADING:
       return {...state, loading: true};
-    case GENERAL_NEWS_SUCCESS:
-      return {loading: false, newsList: action.payload};
-    case GENERAL_NEWS_FAIL:
+    case LATEST_NEWS_SUCCESS:
+      return {
+        loading: false,
+        newsList: createNewsList(action.payload.articles),
+      };
+    case LATEST_NEWS_FAIL:
       return {...state, loading: false, error: action.payload};
     default:
       return state;
   }
 };
+
+// UTILS FUNCTIONS
+function createNewsList(newsList) {
+  let list = [];
+  newsList.forEach(n => {
+    const newNews = new News(
+      Date.now().toString() + Math.random(),
+      n.title,
+      n.description,
+      n.content,
+      n.urlToImage,
+      n.author,
+      n.publishedAt,
+    );
+
+    list.push(newNews);
+  });
+
+  return list;
+}

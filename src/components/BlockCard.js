@@ -1,12 +1,11 @@
 import React from 'react';
-import {View, StyleSheet, Image} from 'react-native';
+import {View, Text, StyleSheet, Image} from 'react-native';
 
 import Title from './Title';
 import SubTitle from './SubTitle';
 
 const BlockCard = ({style, imageStyle, item}) => {
   const {title, description, urlToImage} = item;
-  console.log(urlToImage);
   return (
     <View style={[styles.container, style]}>
       <Image source={{uri: urlToImage}} style={[styles.image, imageStyle]} />
