@@ -7,7 +7,8 @@
  */
 
 import React from 'react';
-import {StyleSheet, Text, View, useColorScheme, StatusBar} from 'react-native';
+import {StyleSheet, View, useColorScheme, StatusBar} from 'react-native';
+import HomeScreen from './src/screens/HomeScreen';
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -16,7 +17,7 @@ const App = () => {
     <>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
       <View style={styles.screen}>
-        <Text>This is a News App</Text>
+        <HomeScreen />
       </View>
     </>
   );
@@ -25,8 +26,6 @@ const App = () => {
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
   },
 });
 
