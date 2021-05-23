@@ -6,7 +6,6 @@ import SubTitle from './SubTitle';
 
 const FlatCard = ({item}) => {
   const {title, description, urlToImage} = item;
-  console.log(urlToImage);
   return (
     <View style={styles.container}>
       <Image source={{uri: urlToImage}} style={styles.image} />

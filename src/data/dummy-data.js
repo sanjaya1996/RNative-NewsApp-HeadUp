@@ -96,7 +96,7 @@ const NEWS_LIST = [
       'Desc is the short form of description and this format is the actual same as our real database.',
     urlToImage:
       'https://cdn.mos.cms.futurecdn.net/SYcNNMnkvgkUQXiLWxmeFJ-1200-80.jpg',
-    category: 'political',
+    category: 'health',
   },
   {
     id: '12',
@@ -105,7 +105,7 @@ const NEWS_LIST = [
       'Desc is the short form of description and this format is the actual same as our real database.',
     urlToImage:
       'https://cdn.mos.cms.futurecdn.net/SYcNNMnkvgkUQXiLWxmeFJ-1200-80.jpg',
-    category: 'political',
+    category: 'health',
   },
   {
     id: '13',
@@ -114,7 +114,7 @@ const NEWS_LIST = [
       'Desc is the short form of description and this format is the actual same as our real database.',
     urlToImage:
       'https://cdn.mos.cms.futurecdn.net/SYcNNMnkvgkUQXiLWxmeFJ-1200-80.jpg',
-    category: 'political',
+    category: 'health',
   },
   {
     id: '14',
@@ -123,7 +123,7 @@ const NEWS_LIST = [
       'Desc is the short form of description and this format is the actual same as our real database.',
     urlToImage:
       'https://cdn.mos.cms.futurecdn.net/SYcNNMnkvgkUQXiLWxmeFJ-1200-80.jpg',
-    category: 'political',
+    category: 'health',
   },
   {
     id: '15',
@@ -132,7 +132,7 @@ const NEWS_LIST = [
       'Desc is the short form of description and this format is the actual same as our real database.',
     urlToImage:
       'https://cdn.mos.cms.futurecdn.net/SYcNNMnkvgkUQXiLWxmeFJ-1200-80.jpg',
-    category: 'political',
+    category: 'health',
   },
   {
     id: '16',

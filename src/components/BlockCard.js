@@ -6,7 +6,6 @@ import SubTitle from './SubTitle';
 
 const BlockCard = ({style, imageStyle, item}) => {
   const {title, description, urlToImage} = item;
-  console.log(urlToImage);
   return (
     <View style={[styles.container, style]}>
       <Image source={{uri: urlToImage}} style={[styles.image, imageStyle]} />

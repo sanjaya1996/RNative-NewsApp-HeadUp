@@ -1,17 +1,19 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 
 import Title from './Title';
 import FlatCard from './FlatCard';
 
-const VerticalList = ({title, data}) => {
+const VerticalList = ({title, data, loading}) => {
   return (
     <View>
       <Title size={20}>{title}</Title>
       <View style={styles.listStyle}>
-        {data.map(item => (
-          <FlatCard key={item.id} item={item} />
-        ))}
+        {loading ? (
+          <Text>Loading...</Text>
+        ) : (
+          data.map(item => <FlatCard key={item.id} item={item} />)
+        )}
       </View>
     </View>
   );

@@ -1,16 +1,18 @@
 import {combineReducers} from 'redux';
 import {
   breakingNewsReducer,
-  generalNewsReducer,
-  politicalNewsReducer,
+  entertainmentNewsReducer,
+  latestNewsReducer,
+  healthNewsReducer,
   techNewsReducer,
 } from './newsReducer';
 
 const RootReducer = combineReducers({
   breakingNews: breakingNewsReducer,
   techNews: techNewsReducer,
-  politicalNews: politicalNewsReducer,
-  generalNews: generalNewsReducer,
+  healthNews: healthNewsReducer,
+  latestNews: latestNewsReducer,
+  entertainmentNews: entertainmentNewsReducer,
 });
 
 export default RootReducer;
