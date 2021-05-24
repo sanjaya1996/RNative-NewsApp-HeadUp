@@ -6,7 +6,7 @@
 
 ## _How to run this app?_
 
-- [Set your development environment](https://reactnative.dev/docs/environment-setup)
+- [SetUp your development environment](https://reactnative.dev/docs/environment-setup)
 - Run the following Commands:
 
 ```
@@ -14,7 +14,7 @@ $ git clone https://github.com/sanjaya1996/RNative-NewsApp-HeadUp.git
 $ npm install
 ```
 
-- Set Environment Variable ( **_important_**)
+- Set Up Environment Variable (**_very important_**)
 
   - Create `.env` file inside your root folder.
   - Store your News api key in `.env` file you created-> Get from [newsapi.org](https://newsapi.org/)
@@ -40,6 +40,8 @@ This is fairly a small Project. We could have developed this app without a singl
   - Redux is a state-management tool which has been used to manage the data, specially news data in this app. Redux-thunk is a middleware which will help in synchronous actions for asynchronous operations. React Redux is the official Redux UI binding library for React.
 - react-navigation : @react-navigation/native, @react-navigation/stack
   - These dependencies / React Navigation whill create a chain of navigators that define the screen flow of our app
+- react-native-dotenv
+  - Store sensitive informations/variables in .env file. For example, in this app I stored my NEWS_API_KEY in .env file, so that I prevent it from exposing in gitHub. However, I strongly recommend you not to store any sensative information in client side if you are planning to publish your app.
 
 ## _Files:_
 

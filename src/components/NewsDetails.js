@@ -15,8 +15,7 @@ import {timeDifference} from '../utils/timeDifference';
 const {height, width} = Dimensions.get('window');
 
 const NewsDetails = ({news}) => {
-  const {title, urlToImage, description, content, author, publishedAt, url} =
-    news;
+  const {title, urlToImage, description, author, publishedAt, url} = news;
 
   const timeStamp = timeDifference(new Date(), new Date(publishedAt));
 
