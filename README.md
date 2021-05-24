@@ -14,12 +14,15 @@ $ git clone https://github.com/sanjaya1996/RNative-NewsApp-HeadUp.git
 $ npm install
 ```
 
-- Set Environment Variable
-  - Create .env file inside your root folder.
-  - Store your News api key-> Get from [newsapi.org](https://newsapi.org/)
+- Set Environment Variable ( **_important_**)
+
+  - Create `.env` file inside your root folder.
+  - Store your News api key in `.env` file you created-> Get from [newsapi.org](https://newsapi.org/)
+
   ```
   NEWS_API_KEY=youRAPikeYHere
   ```
+
 - Open your Android Emulator
 - Run this code to Start app
 

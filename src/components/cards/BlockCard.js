@@ -15,7 +15,7 @@ import {timeDifference} from '../../utils/timeDifference';
 const BlockCard = ({style, imageStyle, item}) => {
   const navigation = useNavigation();
 
-  const {title, description, urlToImage, url, publishedAt} = item;
+  const {title, description, urlToImage, publishedAt} = item;
 
   const timeStamp = timeDifference(new Date(), new Date(publishedAt));
 
