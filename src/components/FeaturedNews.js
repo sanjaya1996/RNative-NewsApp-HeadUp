@@ -3,11 +3,9 @@ import {Text, StyleSheet} from 'react-native';
 import BlockCard from './cards/BlockCard';
 
 const FeaturedNews = ({item, loading, error}) => {
-  return loading ? (
-    <Text>Loading</Text>
-  ) : error ? (
+  return loading ? null : error ? (
     <Text>{error}</Text>
-  ) : (
+  ) : !item ? null : (
     <BlockCard style={styles.container} item={item} />
   );
 };

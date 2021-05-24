@@ -3,7 +3,6 @@ import {} from 'react-native';
 import {createStackNavigator} from '@react-navigation/stack';
 import HomeScreen from '../screens/HomeScreen';
 import NewsDetailsScreen from '../screens/NewsDetailsScreen';
-import Title from '../components/common/Title';
 
 const Stack = createStackNavigator();
 

@@ -1,16 +1,23 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 import BlockCard from './cards/BlockCard';
+import LoadingSpinner from './common/LoadingSpinner';
 import Title from './common/Title';
 
-const LatestNews = ({data}) => {
+const LatestNews = ({data, loading, error}) => {
   return (
     <>
       <Title size={20}>Latest News</Title>
       <View style={styles.listStyle}>
-        {data.map(item => (
-          <BlockCard key={item.id} item={item} style={styles.cardContainer} />
-        ))}
+        {loading ? (
+          <LoadingSpinner />
+        ) : error ? (
+          <Text>{error}</Text>
+        ) : (
+          data.map(item => (
+            <BlockCard key={item.id} item={item} style={styles.cardContainer} />
+          ))
+        )}
       </View>
     </>
   );

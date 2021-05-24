@@ -9,7 +9,6 @@ import Screen from '../components/common/Screen';
 import TechNews from '../components/TechNews';
 import * as newsActions from '../store/actions/newsActions';
 
-import {Text} from 'react-native';
 import LatestNews from '../components/LatestNews';
 
 const HomeScreen = props => {
@@ -52,62 +51,42 @@ const HomeScreen = props => {
   } = entertainmentNewsState;
 
   useEffect(() => {
-    // dispatch(newsActions.getBreakingNews());
-    // dispatch(newsActions.getLatestNews());
-    // dispatch(newsActions.getHealthNews());
-    // dispatch(newsActions.getTechNews());
-    // dispatch(newsActions.getEntertainmentNews());
+    dispatch(newsActions.getBreakingNews());
+    dispatch(newsActions.getLatestNews());
+    dispatch(newsActions.getHealthNews());
+    dispatch(newsActions.getTechNews());
+    dispatch(newsActions.getEntertainmentNews());
   }, [dispatch]);
 
   return (
     <Screen>
-      {loadingLatest ? (
-        <Text>Loading...</Text>
-      ) : errorLatest ? (
-        <Text>{errorLatest}</Text>
-      ) : newsListLatest.length > 0 ? (
-        <FeaturedNews item={newsListLatest[0]} />
-      ) : null}
+      <FeaturedNews
+        item={newsListLatest[0]}
+        loading={loadingLatest}
+        error={errorLatest}
+      />
 
-      {loading ? (
-        <Text>Loading...</Text>
-      ) : error ? (
-        <Text>{error}</Text>
-      ) : (
-        <BreakingNews data={newsList} />
-      )}
+      <BreakingNews data={newsList} loading={loading} error={error} />
 
-      {loadingHealth ? (
-        <Text>Loading...</Text>
-      ) : errorHealth ? (
-        <Text>{errorHealth}</Text>
-      ) : (
-        <HealthNews data={newsListHealth} />
-      )}
+      <HealthNews
+        data={newsListHealth}
+        loading={loadingHealth}
+        error={errorHealth}
+      />
 
-      {loadingTech ? (
-        <Text>Loading...</Text>
-      ) : errorTech ? (
-        <Text>{errorTech}</Text>
-      ) : (
-        <TechNews data={newsListTech} />
-      )}
+      <TechNews data={newsListTech} loading={loadingTech} error={errorTech} />
 
-      {loadingEntertain ? (
-        <Text>Loading...</Text>
-      ) : errorEntertain ? (
-        <Text>{errorEntertain}</Text>
-      ) : (
-        <EntertainmentNews data={newsListEntertain} />
-      )}
+      <EntertainmentNews
+        data={newsListEntertain}
+        loading={loadingEntertain}
+        error={errorEntertain}
+      />
 
-      {loadingLatest ? (
-        <Text>Loading...</Text>
-      ) : errorLatest ? (
-        <Text>{errorLatest}</Text>
-      ) : (
-        <LatestNews data={remainingLatestNews} />
-      )}
+      <LatestNews
+        data={remainingLatestNews}
+        loading={loadingLatest}
+        error={errorLatest}
+      />
     </Screen>
   );
 };

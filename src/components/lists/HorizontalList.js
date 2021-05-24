@@ -3,14 +3,17 @@ import {FlatList, StyleSheet, Text, View} from 'react-native';
 
 import Title from '../common/Title';
 import SmallCard from '../cards/SmallCard';
+import LoadingSpinner from '../common/LoadingSpinner';
 
-const HorizontalList = ({title, data, loading}) => {
+const HorizontalList = ({title, data, loading, error}) => {
   return (
     <>
       <Title size={20}>{title}</Title>
       <View style={styles.listStyle}>
         {loading ? (
-          <Text>Loading...</Text>
+          <LoadingSpinner />
+        ) : error ? (
+          <Text>{error}</Text>
         ) : (
           <FlatList
             data={data}
