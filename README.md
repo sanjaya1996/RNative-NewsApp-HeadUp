@@ -29,7 +29,7 @@ $ npx react-native run-android
 
 ## _Dependencies:_
 
-This is a fairly small Project. We could have developed this app without a single dependencies mentioned below. I planned to Scale up and add other feature in this app further in near future. So, I have added all the relevant dependencies in upfront. Some important dependencies added in this app are as follows:
+This is fairly a small Project. We could have developed this app without a single dependencies mentioned below. I planned this app to Scale up and add other features in near future. Therefore, I have added all the relevant dependencies in upfront. Some important dependencies added in this app are as follows:
 
 - axios
   - Axios will help us to make a HTTP request way more easier.
@@ -40,7 +40,7 @@ This is a fairly small Project. We could have developed this app without a singl
 
 ## _Files:_
 
-You might be overwhelmed by looking the file structure and number of files in this app. I already mentioned that I am going to scaleup this app in future. So, I have implemented this project in such a way that anyone going to add new feature will get enough room and will not face any issue, and will not mess up.
+You might be overwhelmed by looking the file structure and number of files in this app. I already mentioned that I am going to scaleup this app in future. So, I have implemented this project in such a way that anyone willing to add new features in this app will get enough room and will not face any issue, and will not mess up.
 
 ## _Developer: Sanjay Dahal @[HeadupLab](https://www.headuplabs.com/)_
 
