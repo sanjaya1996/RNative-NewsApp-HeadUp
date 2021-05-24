@@ -1,17 +1,13 @@
 import React from 'react';
-import {useSelector} from 'react-redux';
 import NewsDetails from '../components/NewsDetails';
 import Screen from '../components/common/Screen';
 
-const NewsDetailsScreen = () => {
-  const state = useSelector(store => store);
-
-  const latestNewsState = state.latestNews;
-  const {newsList} = latestNewsState;
+const NewsDetailsScreen = props => {
+  const news = props.route.params.item;
 
   return (
     <Screen>
-      <NewsDetails news={newsList[2]} />
+      <NewsDetails news={news} />
     </Screen>
   );
 };

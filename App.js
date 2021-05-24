@@ -8,10 +8,10 @@
 
 import React from 'react';
 import {useColorScheme, StatusBar} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
 import {Provider} from 'react-redux';
-import HomeScreen from './src/screens/HomeScreen';
-import NewsDetailsScreen from './src/screens/NewsDetailsScreen';
 import store from './src/store/store';
+import AppNavigator from './src/navigation/AppNavigator';
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -19,8 +19,9 @@ const App = () => {
   return (
     <Provider store={store}>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <HomeScreen />
-      {/* <NewsDetailsScreen /> */}
+      <NavigationContainer>
+        <AppNavigator />
+      </NavigationContainer>
     </Provider>
   );
 };

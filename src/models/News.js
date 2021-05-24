@@ -7,6 +7,7 @@ class News {
     urlToImage,
     author,
     publishedAt,
+    url,
   ) {
     this.id = id;
     this.title = title;
@@ -15,6 +16,7 @@ class News {
     this.urlToImage = urlToImage;
     this.author = author;
     this.publishedAt = publishedAt;
+    this.url = url;
   }
 }
 

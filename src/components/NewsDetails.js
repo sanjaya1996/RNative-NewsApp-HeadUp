@@ -7,19 +7,37 @@ import {
   View,
   Dimensions,
 } from 'react-native';
+import {timeDifference} from '../utils/timeDifference';
 
 const {height, width} = Dimensions.get('window');
 
 const NewsDetails = ({news}) => {
-  const {id, title, urlToImage, description, content, author, publishedAt} =
-    news;
+  const {
+    id,
+    title,
+    urlToImage,
+    description,
+    content,
+    author,
+    publishedAt,
+    url,
+  } = news;
+
+  const timeStamp = timeDifference(new Date(), new Date(publishedAt));
 
   return (
     <ScrollView style={styles.container}>
       <Image source={{uri: urlToImage}} style={styles.image} />
       <View style={styles.contentContainer}>
-        <Text style={styles.title}>{title}</Text>
+        <Text style={styles.title}>
+          {title}
+          <Text style={styles.lightContent}>
+            {' '}
+            {author} {timeStamp}
+          </Text>
+        </Text>
         <Text style={styles.content}>{description}</Text>
+        <Text style={styles.content}>{content}</Text>
       </View>
     </ScrollView>
   );
@@ -43,6 +61,12 @@ const styles = StyleSheet.create({
   },
   content: {
     fontSize: 16,
+    fontWeight: 'normal',
+    color: '#4e4d4d',
+  },
+  lightContent: {
+    fontSize: 14,
+    fontWeight: 'normal',
     color: '#4e4d4d',
   },
 });

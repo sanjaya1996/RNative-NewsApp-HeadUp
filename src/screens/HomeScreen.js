@@ -12,7 +12,7 @@ import * as newsActions from '../store/actions/newsActions';
 import {Text} from 'react-native';
 import LatestNews from '../components/LatestNews';
 
-const HomeScreen = () => {
+const HomeScreen = props => {
   const dispatch = useDispatch();
 
   const state = useSelector(store => store);
@@ -52,11 +52,11 @@ const HomeScreen = () => {
   } = entertainmentNewsState;
 
   useEffect(() => {
-    dispatch(newsActions.getBreakingNews());
-    dispatch(newsActions.getLatestNews());
-    dispatch(newsActions.getHealthNews());
-    dispatch(newsActions.getTechNews());
-    dispatch(newsActions.getEntertainmentNews());
+    // dispatch(newsActions.getBreakingNews());
+    // dispatch(newsActions.getLatestNews());
+    // dispatch(newsActions.getHealthNews());
+    // dispatch(newsActions.getTechNews());
+    // dispatch(newsActions.getEntertainmentNews());
   }, [dispatch]);
 
   return (

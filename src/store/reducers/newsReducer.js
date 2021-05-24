@@ -114,6 +114,7 @@ function createNewsList(newsList) {
       n.urlToImage,
       n.author,
       n.publishedAt,
+      n.url,
     );
 
     list.push(newNews);

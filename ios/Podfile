@@ -12,6 +12,7 @@ target 'RNativeNewsApp' do
     :hermes_enabled => false
   )
 
+
   target 'RNativeNewsAppTests' do
     inherit! :complete
     # Pods for testing
