@@ -26,7 +26,14 @@ const BlockCard = ({style, imageStyle, item}) => {
   return (
     <TouchableWithoutFeedback onPress={cardClickHandler}>
       <View style={[styles.container, style]}>
-        <Image source={{uri: urlToImage}} style={[styles.image, imageStyle]} />
+        <Image
+          source={
+            urlToImage && urlToImage.length > 5
+              ? {uri: urlToImage}
+              : require('../../../assets/defaultNewsImage.jpg')
+          }
+          style={[styles.image, imageStyle]}
+        />
         <View style={styles.contentContainer}>
           <Title>{title}</Title>
           <Text style={styles.lightContent}> {timeStamp}</Text>

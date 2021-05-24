@@ -8,6 +8,7 @@ class News {
     author,
     publishedAt,
     url,
+    category,
   ) {
     this.id = id;
     this.title = title;
@@ -17,6 +18,7 @@ class News {
     this.author = author;
     this.publishedAt = publishedAt;
     this.url = url;
+    this.category = category;
   }
 }
 

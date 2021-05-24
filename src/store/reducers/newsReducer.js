@@ -29,7 +29,7 @@ export const breakingNewsReducer = (state = initialState, action) => {
     case BREAKING_NEWS_SUCCESS:
       return {
         loading: false,
-        newsList: createNewsList(action.payload.articles),
+        newsList: createNewsList(action.payload.articles, 'breaking'),
       };
     case BREAKING_NEWS_FAIL:
       return {...state, loading: false, error: action.payload};
@@ -45,7 +45,7 @@ export const techNewsReducer = (state = initialState, action) => {
     case TECH_NEWS_SUCCESS:
       return {
         loading: false,
-        newsList: createNewsList(action.payload.articles),
+        newsList: createNewsList(action.payload.articles, 'tech'),
       };
     case TECH_NEWS_FAIL:
       return {...state, loading: false, error: action.payload};
@@ -61,7 +61,7 @@ export const healthNewsReducer = (state = initialState, action) => {
     case HEALTH_NEWS_SUCCESS:
       return {
         loading: false,
-        newsList: createNewsList(action.payload.articles),
+        newsList: createNewsList(action.payload.articles, 'health'),
       };
     case HEALTH_NEWS_FAIL:
       return {...state, loading: false, error: action.payload};
@@ -77,7 +77,7 @@ export const entertainmentNewsReducer = (state = initialState, action) => {
     case ENTERTAINMENT_NEWS_SUCCESS:
       return {
         loading: false,
-        newsList: createNewsList(action.payload.articles),
+        newsList: createNewsList(action.payload.articles, 'entertainment'),
       };
     case ENTERTAINMENT_NEWS_FAIL:
       return {...state, loading: false, error: action.payload};
@@ -93,7 +93,7 @@ export const latestNewsReducer = (state = initialState, action) => {
     case LATEST_NEWS_SUCCESS:
       return {
         loading: false,
-        newsList: createNewsList(action.payload.articles),
+        newsList: createNewsList(action.payload.articles, 'latest'),
       };
     case LATEST_NEWS_FAIL:
       return {...state, loading: false, error: action.payload};
@@ -103,7 +103,7 @@ export const latestNewsReducer = (state = initialState, action) => {
 };
 
 // UTILS FUNCTIONS
-function createNewsList(newsList) {
+function createNewsList(newsList, category) {
   let list = [];
   newsList.forEach(n => {
     const newNews = new News(
@@ -115,6 +115,7 @@ function createNewsList(newsList) {
       n.author,
       n.publishedAt,
       n.url,
+      category,
     );
 
     list.push(newNews);

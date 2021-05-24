@@ -57,7 +57,6 @@ const HomeScreen = props => {
     dispatch(newsActions.getTechNews());
     dispatch(newsActions.getEntertainmentNews());
   }, [dispatch]);
-
   return (
     <Screen>
       <FeaturedNews

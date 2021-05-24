@@ -8,7 +8,12 @@ const Stack = createStackNavigator();
 
 const AppNavigator = () => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator
+      screenOptions={{
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        },
+      }}>
       <Stack.Screen
         name="Home"
         component={HomeScreen}
@@ -17,7 +22,7 @@ const AppNavigator = () => {
       <Stack.Screen
         name="NewsDetails"
         component={NewsDetailsScreen}
-        options={{title: 'News Details'}}
+        options={({route}) => ({title: route.params.item.title})}
       />
     </Stack.Navigator>
   );
