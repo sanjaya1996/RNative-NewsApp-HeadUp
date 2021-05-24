@@ -52,21 +52,22 @@ const HomeScreen = () => {
   } = entertainmentNewsState;
 
   useEffect(() => {
-    dispatch(newsActions.getBreakingNews());
-    dispatch(newsActions.getLatestNews());
-    dispatch(newsActions.getHealthNews());
-    dispatch(newsActions.getTechNews());
-    dispatch(newsActions.getEntertainmentNews());
+    // dispatch(newsActions.getBreakingNews());
+    // dispatch(newsActions.getLatestNews());
+    // dispatch(newsActions.getHealthNews());
+    // dispatch(newsActions.getTechNews());
+    // dispatch(newsActions.getEntertainmentNews());
   }, [dispatch]);
+
   return (
     <Screen>
       {loadingLatest ? (
         <Text>Loading...</Text>
       ) : errorLatest ? (
         <Text>{errorLatest}</Text>
-      ) : (
+      ) : newsListLatest.length > 0 ? (
         <FeaturedNews item={newsListLatest[0]} />
-      )}
+      ) : null}
 
       {loading ? (
         <Text>Loading...</Text>
