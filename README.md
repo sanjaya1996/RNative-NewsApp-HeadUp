@@ -1,8 +1,8 @@
-> # News App - Head Up <img src="./screenshots/headupLogo.jpg" width="50" height="50" />
+> # News App - Head Up <img src="./screenshots/headupLogo.jpg?raw=true" width="50" height="50" />
 
-<img src="./screenshots/Shot1.jpg" width="150" height= '300' />&nbsp;&nbsp;
-<img src="./screenshots/Shot2.jpg" width="150" height= '300' />&nbsp;&nbsp;
-<img src="./screenshots/Shot3.jpg" width="150" height= '300' />
+<img src="./screenshots/Shot1.JPG?raw=true" width="150" height= '300' />&nbsp;&nbsp;
+<img src="./screenshots/Shot2.jpg?raw=true" width="150" height= '300' />&nbsp;&nbsp;
+<img src="./screenshots/Shot3.jpg?raw=true" width="150" height= '300' />
 
 ## _How to run this app?_
 
@@ -44,4 +44,4 @@ You might be overwhelmed by looking the file structure and number of files in th
 
 ## _Developer: Sanjay Dahal @[HeadupLab](https://www.headuplabs.com/)_
 
-<img src="./screenshots/headupLogo.jpg" width="100" height="100" />
+<img src="./screenshots/headupLogo.jpg?raw=true" width="100" height="100" />
