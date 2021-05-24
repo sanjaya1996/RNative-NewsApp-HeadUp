@@ -1,11 +1,8 @@
 > # News App - Head Up <img src="./screenshots/headupLogo.jpg" width="50" height="50" />
 
-`<p float="left">
-<img src="./screenshots/Shot1.jpg" width="200" />
-<img src="./screenshots/Shot2.jpg" width="200" />
-<img src="./screenshots/Shot3.jpg" width="200" />
-
-</p>`
+<img src="./screenshots/Shot1.jpg" width="150" height= '300' />&nbsp;&nbsp;
+<img src="./screenshots/Shot2.jpg" width="150" height= '300' />&nbsp;&nbsp;
+<img src="./screenshots/Shot3.jpg" width="150" height= '300' />
 
 ## _How to run this app?_
 
