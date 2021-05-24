@@ -19,8 +19,8 @@ const App = () => {
   return (
     <Provider store={store}>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      {/* <HomeScreen /> */}
-      <NewsDetailsScreen />
+      <HomeScreen />
+      {/* <NewsDetailsScreen /> */}
     </Provider>
   );
 };

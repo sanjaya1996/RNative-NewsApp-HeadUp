@@ -1,7 +1,7 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
-import BlockCard from './BlockCard';
-import Title from './Title';
+import BlockCard from './cards/BlockCard';
+import Title from './common/Title';
 
 const LatestNews = ({data}) => {
   return (

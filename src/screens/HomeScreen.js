@@ -5,7 +5,7 @@ import BreakingNews from '../components/BreakingNews';
 import EntertainmentNews from '../components/EntertainmentNews';
 import FeaturedNews from '../components/FeaturedNews';
 import HealthNews from '../components/HealthNews';
-import Screen from '../components/Screen';
+import Screen from '../components/common/Screen';
 import TechNews from '../components/TechNews';
 import * as newsActions from '../store/actions/newsActions';
 
@@ -52,11 +52,11 @@ const HomeScreen = () => {
   } = entertainmentNewsState;
 
   useEffect(() => {
-    // dispatch(newsActions.getBreakingNews());
-    // dispatch(newsActions.getLatestNews());
-    // dispatch(newsActions.getHealthNews());
-    // dispatch(newsActions.getTechNews());
-    // dispatch(newsActions.getEntertainmentNews());
+    dispatch(newsActions.getBreakingNews());
+    dispatch(newsActions.getLatestNews());
+    dispatch(newsActions.getHealthNews());
+    dispatch(newsActions.getTechNews());
+    dispatch(newsActions.getEntertainmentNews());
   }, [dispatch]);
 
   return (

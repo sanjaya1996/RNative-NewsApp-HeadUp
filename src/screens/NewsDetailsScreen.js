@@ -1,7 +1,7 @@
 import React from 'react';
 import {useSelector} from 'react-redux';
 import NewsDetails from '../components/NewsDetails';
-import Screen from '../components/Screen';
+import Screen from '../components/common/Screen';
 
 const NewsDetailsScreen = () => {
   const state = useSelector(store => store);
