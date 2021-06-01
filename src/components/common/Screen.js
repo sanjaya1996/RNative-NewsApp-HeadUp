@@ -5,7 +5,7 @@ const Screen = ({children}) => {
   return <ScrollView style={styles.screen}>{children}</ScrollView>;
 };
 
-const styles = StyleSheet.create({
+export const styles = StyleSheet.create({
   screen: {
     flexGrow: 1,
     paddingHorizontal: 15,
